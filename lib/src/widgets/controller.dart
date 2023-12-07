@@ -411,9 +411,12 @@ class QuillController extends ChangeNotifier {
         baseOffset: math.min(selection.baseOffset, end),
         extentOffset: math.min(selection.extentOffset, end));
     if (_keepStyleOnNewLine) {
-      final style = getSelectionStyle();
+      var style = document.collectStyle(selection.start, selection.end - selection.start);
+      if(style.isEmpty||(style.values.length == 1 && style.attributes.keys.contains("list"))) {
+        style = style.mergeAll(toggledStyle);
+      }
       final ignoredStyles = style.attributes.values.where(
-        (s) => !s.isInline || s.key == Attribute.link.key,
+            (s) => !s.isInline || s.key == Attribute.link.key,
       );
       toggledStyle = style.removeAll(ignoredStyles.toSet());
     } else {
