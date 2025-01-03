@@ -12,7 +12,7 @@ import gal
 import pasteboard
 import path_provider_foundation
 import share_plus
-import sqflite
+import sqflite_darwin
 import url_launcher_macos
 import video_player_avfoundation
 

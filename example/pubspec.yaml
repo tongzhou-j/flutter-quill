@@ -46,7 +46,7 @@ dependencies:
   # For drag and drop feature
   desktop_drop: ^0.4.4
   # For picking quill document files
-  file_picker: ^6.1.1
+  file_picker: ^8.1.0
   # For sharing text
   share_plus: ^7.2.1
 
@@ -63,7 +63,7 @@ dependency_overrides:
   gal:
     git:
       url: https://github.com/natsuk4ze/gal.git
-      ref: plugin_platform_interface
+#      ref: plugin_platform_interface
 
 
 dev_dependencies:
